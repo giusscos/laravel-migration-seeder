@@ -14,36 +14,38 @@
 <body>
     <main>
         <section>
-            <h2>
-                I Treni di oggi 12/10/2022
-            </h2>
-            <div>
+            <div class="container data">
+                <h2>
+                    I Treni di oggi 12/10/2022
+                </h2>
                 @foreach ($trains as $train)
-                    <h2>
-                        {{ $train['azienda'] }}
-                    </h2>
                     <div>
-                        {{ $train['stazione_di_partenza'] }} -
-                        {{ $train['stazione_di_arrivo'] }}
-                    </div>
-                    <div>
-                        {{ $train['orario_di_partenza'] }} -
-                        {{ $train['orario_di_arrivo'] }}
-                    </div>
-                    <div>
-                        {{ $train['codice_treno '] }}
-                    </div>
-                    <div>
-                    @if ($train['in_orario'] == 1)
-                        In oraio
-                    @else
-                        In ritardo
-                    @endif
-                    </div>
-                    <div>
-                        @if($train['cancellato'] == 1)
-                            Cancellato
-                        @endif
+                        <h3>
+                            {{ $train['azienda'] }}
+                        </h3>
+                        <div>
+                            Partenza: {{ $train['stazione_di_partenza'] }};<br>
+                            Arrivo: {{ $train['stazione_di_arrivo'] }};
+                        </div>
+                        <div>
+                           Partenza: {{ $train['orario_di_partenza'] }};<br>
+                           Arrivo: {{ $train['orario_di_arrivo'] }};
+                        </div>
+                        <div>
+                            Treno N. {{ $train['codice_treno '] }}
+                        </div>
+                        <div>
+                            @if ($train['in_orario'] == 1)
+                                In oraio
+                            @else
+                                In ritardo
+                            @endif
+                        </div>
+                        <div>
+                            @if ($train['cancellato'] == 1)
+                                Cancellato
+                            @endif
+                        </div>
                     </div>
                 @endforeach
             </div>

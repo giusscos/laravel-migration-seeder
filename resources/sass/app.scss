@@ -3,3 +3,23 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body{
+    text-align: center;
+}
+
+.container{
+    margin: 0 auto;
+    padding: 0 0.5rem;
+    max-width: 1000px;
+
+    &.data{
+        gap: 1.5rem;
+        display: flex;
+        flex-wrap: wrap;
+
+        >*{
+            flex-basis: 100%;
+        }
+    }
+}
